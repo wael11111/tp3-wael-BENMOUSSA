@@ -1,0 +1,15 @@
+
+> snapsort@1.0.0 e2e
+> playwright test
+
+
+Running 6 tests using 1 worker
+
+  ✓  1 [chromium] › e2e/demo.spec.ts:19:3 › SnapSort — parcours principal › l'accueil présente le produit et les deux portes d'entrée (2.7s)
+  ✓  2 [chromium] › e2e/demo.spec.ts:26:3 › SnapSort — parcours principal › la démo se charge, se trie et persiste après rechargement (7.5s)
+  ✓  3 [chromium] › e2e/demo.spec.ts:43:3 › SnapSort — parcours principal › le tri au clavier fonctionne et s'annule (7.9s)
+  ✓  4 [chromium] › e2e/demo.spec.ts:55:3 › SnapSort — parcours principal › un fichier invalide est rejeté avec une raison lisible (2.5s)
+  ✓  5 [chromium] › e2e/demo.spec.ts:65:3 › SnapSort — parcours principal › les collections se remplissent après classement (7.9s)
+  ✓  6 [chromium] › e2e/onboarding.spec.ts:3:1 › l'accueil guidé apparaît à la première visite et se ferme (2.9s)
+
+  6 passed (38.6s)

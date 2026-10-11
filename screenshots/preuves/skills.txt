@@ -1,0 +1,8 @@
+    "name": "customize-opencode",
+    "location": "<built-in>",
+    "name": "indexeddb-persistence",
+    "location": "/home/vboxuser/TP_IA/tp3-wael-BENMOUSSA/.opencode/skills/indexeddb-persistence/SKILL.md",
+    "name": "tesseract-ocr",
+    "location": "/home/vboxuser/TP_IA/tp3-wael-BENMOUSSA/.opencode/skills/tesseract-ocr/SKILL.md",
+    "name": "snapsort-ui",
+    "location": "/home/vboxuser/TP_IA/tp3-wael-BENMOUSSA/.opencode/skills/snapsort-ui/SKILL.md",

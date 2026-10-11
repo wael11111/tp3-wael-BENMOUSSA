@@ -1,0 +1,13 @@
+node_modules
+dist
+coverage
+playwright-report
+test-results
+*.local
+.DS_Store
+.opencode/node_modules
+.opencode/hooks.log
+.env
+.env.*
+*.pem
+*.key

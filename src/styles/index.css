@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f3ede1;
+  --color-cream-deep: #e9e0ce;
+  --color-surface: #fffdf9;
+  --color-surface-2: #fbf7ee;
+  --color-ink: #1c1712;
+  --color-ink-soft: #3d352a;
+  --color-muted: #726a5c;
+  --color-faint: #a89e8c;
+  --color-line: #e2d9c7;
+  --color-line-strong: #cfc3ac;
+
+  --color-accent: #e0552b;
+  --color-accent-deep: #b83c17;
+  --color-accent-soft: #fbe4d9;
+
+  --color-moss: #2f6b4f;
+  --color-moss-soft: #dfece2;
+  --color-plum: #6d4aff;
+  --color-plum-soft: #e7e1ff;
+  --color-gold: #c98a1b;
+  --color-gold-soft: #f6e8c9;
+  --color-slate-blue: #2f5d8a;
+  --color-slate-blue-soft: #dde7f1;
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Palatino", "Book Antiqua",
+    Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
+
+  --shadow-card: 0 1px 2px rgba(28, 23, 18, 0.04), 0 12px 32px -18px rgba(28, 23, 18, 0.28);
+  --shadow-lift: 0 2px 4px rgba(28, 23, 18, 0.05), 0 28px 60px -30px rgba(28, 23, 18, 0.4);
+  --shadow-pop: 0 18px 50px -20px rgba(28, 23, 18, 0.45);
+
+  --radius-card: 1.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga", "calt";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-image:
+      radial-gradient(circle at 12% -8%, rgba(224, 85, 43, 0.09), transparent 42%),
+      radial-gradient(circle at 100% 0%, rgba(47, 107, 79, 0.08), transparent 38%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line-strong);
+    border-radius: 999px;
+    border: 3px solid var(--color-cream);
+  }
+}
+
+@layer components {
+  .card-surface {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      var(--color-line-strong),
+      transparent
+    );
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes snapsort-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes snapsort-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes snapsort-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes snapsort-shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.animate-rise {
+  animation: snapsort-rise 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-fade {
+  animation: snapsort-fade 0.3s ease both;
+}
+.animate-pulse-soft {
+  animation: snapsort-pulse 1.6s ease-in-out infinite;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-cream-deep) 25%,
+    var(--color-surface) 50%,
+    var(--color-cream-deep) 75%
+  );
+  background-size: 800px 100%;
+  animation: snapsort-shimmer 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
