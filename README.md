@@ -12,7 +12,18 @@ pas de serveur.
   <img src="screenshots/03-tri-session.png" alt="Écran de tri avec analyse locale" width="49%" />
 </p>
 
-## Démarrage rapide
+## Démo en ligne
+
+Aucune installation n'est nécessaire : l'application est déployée sur **GitHub
+Pages** et s'exécute entièrement dans votre navigateur.
+
+**[https://wael11111.github.io/tp3-wael-BENMOUSSA/](https://wael11111.github.io/tp3-wael-BENMOUSSA/)**
+
+Cliquez sur **« Essayer la démo »** pour un jeu d'images généré localement, ou
+importez vos propres photos. Tout reste sur votre appareil (IndexedDB) ; rien
+n'est envoyé à un serveur.
+
+## Démarrage rapide (développement local)
 
 Prérequis : **Node.js ≥ 20** (testé avec Node 22) et npm.
 
@@ -131,6 +142,9 @@ Les captures de l'application et du harness (agents, `npm run verify`) sont dans
 ## Confidentialité
 
 - Les images ne quittent **jamais** le navigateur. Aucun envoi vers un serveur.
+  La version en ligne est servie **statiquement** par GitHub Pages : le serveur
+  ne reçoit que les fichiers de l'application, jamais vos photos ni vos
+  décisions.
 - Aucun compte, aucune clé API, aucun traceur.
 - **Limite honnête** : l'OCR utilise tesseract.js. Au premier usage, le moteur et
   les fichiers de langue peuvent être téléchargés depuis un CDN puis mis en
